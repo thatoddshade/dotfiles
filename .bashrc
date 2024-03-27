@@ -687,5 +687,4 @@ function ya() {
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 PATH=$PATH:"~/todo.txt"
-
 alias todo='todo.sh -d ~/todo.txt/todo.cfg'
