@@ -1,4 +1,4 @@
 import = ["~/.config/alacritty/themes/flexoki-dark.toml"]
 
 [window]
-opacity = 0.75
+opacity = 0.5
