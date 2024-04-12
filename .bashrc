@@ -688,3 +688,12 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 PATH=$PATH:"~/todo.txt"
 alias todo='todo.sh -d ~/todo.txt/todo.cfg'
+
+
+# fzf theme from https://github.com/kepano/flexoki/blob/main/fzf/README.md#dark
+ export FZF_DEFAULT_OPTS="
+		--color=fg:#878580,bg:#100F0F,hl:#FFFCF0
+		--color=fg+:#878580,bg+:#1C1B1A,hl+:#FFFCF0
+		--color=border:#AF3029,header:#FFFCF0,gutter:#100F0F
+		--color=spinner:#24837B,info:#24837B,separator:#1C1B1A
+		--color=pointer:#AD8301,marker:#AF3029,prompt:#AD8301"
