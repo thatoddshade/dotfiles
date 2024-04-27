@@ -605,3 +605,8 @@ alias todo='todo.sh -d ~/todo.txt/todo.cfg'
 # being an r/AnarchyChess member is required for context
 alias car="cat"
 alias lolcar="lolcat"
+
+function paste() {
+        local file=${1:-/dev/stdin}
+	curl --data-binary @${file} https:://paste.rs
+}
