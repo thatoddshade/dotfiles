@@ -54,11 +54,6 @@ if [[ $iatest -gt 0 ]]; then bind "set show-all-if-ambiguous On"; fi
 # Set the default editor
 export EDITOR=nvim
 export VISUAL=nvim
-#alias pico='edit'
-#alias spico='sedit'
-#alias nano='edit'
-#alias snano='sedit'
-#alias vim='nvim'
 
 # Replace batcat with cat on Fedora as batcat is not available as a RPM in any form
 if command -v lsb_release >/dev/null; then
@@ -129,21 +124,10 @@ alias mkdir='mkdir -p'
 alias ps='ps auxf'
 alias ping='ping -c 10'
 alias less='less -R'
-#alias cls='clear'
-#alias apt-get='sudo apt-get'
+alias cls='clear'
 alias multitail='multitail --no-repeat -c'
 alias freshclam='sudo freshclam'
 alias vi='nvim'
-#alias svi='sudo vi'
-#alias vis='nvim "+set si"'
-
-# Change directory aliases
-#alias home='cd ~'
-#alias cd..='cd ..'
-#alias ..='cd ..'
-#alias ...='cd ../..'
-#alias ....='cd ../../..'
-#alias .....='cd ../../../..'
 
 # cd into the old directory
 alias bd='cd "$OLDPWD"'
@@ -175,15 +159,9 @@ alias 666='chmod -R 666'
 alias 755='chmod -R 755'
 alias 777='chmod -R 777'
 
-# Search command line history
-#alias h="history | grep "
-
 # Search running processes
 alias p="ps aux | grep "
 alias topcpu="/bin/ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10"
-
-# Search files in the current folder
-#alias f="find . | grep "
 
 # Count all files (recursively) in the current folder
 alias countfiles="for t in files links directories; do echo \`find . -type \${t:0:1} | wc -l\` \$t; done 2> /dev/null"
@@ -221,10 +199,6 @@ alias logs="sudo find /var/log -type f -exec file {} \; | grep 'text' | cut -d' 
 alias sha1='openssl sha1'
 
 alias clickpaste='sleep 3; xdotool type "$(xclip -o -selection clipboard)"'
-
-# KITTY - alias to be able to use kitty features when connecting to remote servers(e.g use tmux on remote server)
-
-#alias kssh="kitty +kitten ssh"
 
 #######################################################
 # SPECIAL FUNCTIONS
@@ -349,16 +323,6 @@ up() {
 	fi
 	cd $d
 }
-
-#Automatically do an ls after each cd
-# cd ()
-# {
-# 	if [ -n "$1" ]; then
-# 		builtin cd "$@" && ls
-# 	else
-# 		builtin cd ~ && ls
-# 	fi
-# }
 
 # Returns the last 2 fields of the working directory
 pwdtail() {
@@ -588,72 +552,11 @@ trim() {
 # check out cool vid: https://www.youtube.com/watch?v=aghxkpyRVDY
 eval "$(zoxide init --cmd cd bash)"
 
-#gcom() {
-#	git add .
-#	git commit -m "$1"
-#}
-#lazyg() {
-#	git add .
-#	git commit -m "$1"
-#	git push
-#}
-#_z_cd() {
-#	cd "$@" || return "$?"
-#
-#	if [ "$_ZO_ECHO" = "1" ]; then
-#		echo "$PWD"
-#	fi
-#}
-#
-#z() {
-#	if [ "$#" -eq 0 ]; then
-#		_z_cd ~
-#	elif [ "$#" -eq 1 ] && [ "$1" = '-' ]; then
-#		if [ -n "$OLDPWD" ]; then
-#			_z_cd "$OLDPWD"
-#		else
-#			echo 'zoxide: $OLDPWD is not set'
-#			return 1
-#		fi
-#	else
-#		_zoxide_result="$(zoxide query -- "$@")" && _z_cd "$_zoxide_result"
-#	fi
-#}
-#
-#zi() {
-#	_zoxide_result="$(zoxide query -i -- "$@")" && _z_cd "$_zoxide_result"
-#}
 
-#alias za='zoxide add'
-
-#alias zq='zoxide query'
-#alias zqi='zoxide query -i'
-
-#alias zr='zoxide remove'
-#zri() {
-#	_zoxide_result="$(zoxide query -i -- "$@")" && zoxide remove "$_zoxide_result"
-#}
-#
-#_zoxide_hook() {
-#	if [ -z "${_ZO_PWD}" ]; then
-#		_ZO_PWD="${PWD}"
-#	elif [ "${_ZO_PWD}" != "${PWD}" ]; then
-#		_ZO_PWD="${PWD}"
-#		zoxide add "$(pwd -L)"
-#	fi
-#}
-#
-#case "$PROMPT_COMMAND" in
-#*_zoxide_hook*) ;;
-#*) PROMPT_COMMAND="_zoxide_hook${PROMPT_COMMAND:+;${PROMPT_COMMAND}}" ;;
-#esac
-#alias lookingglass="~/looking-glass-B5.0.1/client/build/looking-glass-client -F"
 #######################################################
 # Set the ultimate amazing command prompt
 #######################################################
 
-#alias hug="hugo server -F --bind=10.0.0.210 --baseURL=http://10.0.0.210"
-#
 export PATH=$PATH:"$HOME/.local/bin:$HOME/.cargo/bin:/var/lib/flatpak/exports/bin:/.local/share/flatpak/exports/bin"
 
 # Install Starship - curl -sS https://starship.rs/install.sh | sh
@@ -697,3 +600,8 @@ alias todo='todo.sh -d ~/todo.txt/todo.cfg'
 		--color=border:#AF3029,header:#FFFCF0,gutter:#100F0F
 		--color=spinner:#24837B,info:#24837B,separator:#1C1B1A
 		--color=pointer:#AD8301,marker:#AF3029,prompt:#AD8301"
+
+
+# being an r/AnarchyChess member is required for context
+alias car="cat"
+alias lolcar="lolcat"
