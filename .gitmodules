@@ -1,3 +1,6 @@
 [submodule ".config/nvim"]
 	path = .config/nvim
 	url = https://github.com/thatoddshade/nvim
+[submodule "arrpc"]
+	path = arrpc
+	url = https://github.com/OpenAsar/arrpc.git
