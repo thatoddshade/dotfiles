@@ -1,4 +1,5 @@
 const hyprland = await Service.import('hyprland');
+const network = await Service.import('network')
 const notifications = await Service.import('notifications');
 const mpris = await Service.import('mpris');
 const audio = await Service.import('audio');
@@ -64,7 +65,7 @@ const Media = () => Widget.Button({
             const { track_artists, track_title } = mpris.players[0];
             self.label = `${track_artists.join(', ')} - ${track_title}`;
         } else {
-            self.label = 'Nothing is playing';
+            self.label = 'nothing is playing.';
         }
     }, 'player-changed'),
 });
@@ -127,6 +128,64 @@ const SysTray = () => Widget.Box({
     ),
 });
 
+function getWifiIcon(internet) {
+    switch (internet) {
+        case "connected":
+            return "󰖩";
+
+        case "connecting":
+            return "󱛆";
+
+        case "disconnected":
+            return "󰖪";
+
+        default:
+            return "";
+    }
+}
+
+const WifiIndicator = () => Widget.Box({
+    children: [
+        Widget.Label({
+            class_name: "wifi-indicator-icon",
+            label: getWifiIcon(network.wifi.internet),
+        }),
+        Widget.Label({
+            label: network.wifi.bind('ssid')
+                .as(ssid => ssid || 'Unknown'),
+        }),
+    ],
+})
+
+function getWiredIcon(internet) {
+    switch (internet) {
+        case "connected":
+            return "";
+
+        case "connecting":
+            return "";
+
+        case "disconnected":
+            return "󰅖";
+
+        default:
+            return "";
+    }
+}
+
+const WiredIndicator = () => Widget.Label({
+    class_name: "wired-indicator",
+    label: getWiredIcon(network.wired.internet),
+})
+
+const NetworkIndicator = () => Widget.Stack({
+    children: {
+        wifi: WifiIndicator(),
+        wired: WiredIndicator(),
+    },
+    shown: network.bind('primary').as(p => p || 'wifi'),
+})
+
 // layout of the bar
 const Left = () => Widget.Box({
     spacing: 8,
@@ -150,8 +209,9 @@ const Right = () => Widget.Box({
     children: [
         //Volume(),
         BatteryLabel(),
-        Clock(),
         SysTray(),
+        Clock(),
+        NetworkIndicator(),
     ],
 });
 
