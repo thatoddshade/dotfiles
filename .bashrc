@@ -591,6 +591,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 PATH=$PATH:"~/todo.txt"
 alias todo='todo.sh -d ~/todo.txt/todo.cfg'
+alias t='todo.sh -d ~/todo.txt/todo.cfg'
 
 
 # fzf theme from https://github.com/kepano/flexoki/blob/main/fzf/README.md#dark
