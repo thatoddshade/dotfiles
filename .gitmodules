@@ -4,3 +4,6 @@
 [submodule "arrpc"]
 	path = arrpc
 	url = https://github.com/OpenAsar/arrpc.git
+[submodule ".mozilla/firefox"]
+	path = .mozilla/firefox
+	url = https://github.com/thatoddshade/firefox
