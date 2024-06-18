@@ -7,3 +7,6 @@
 [submodule ".mozilla/firefox"]
 	path = .mozilla/firefox
 	url = https://github.com/thatoddshade/firefox
+[submodule ".config/GIMP"]
+	path = .config/GIMP
+	url = https://github.com/thatoddshade/GIMP
