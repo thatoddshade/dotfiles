@@ -24,9 +24,6 @@ fi
 # EXPORTS
 #######################################################
 
-# Disable the bell
-if [[ $iatest -gt 0 ]]; then bind "set bell-style visible"; fi
-
 # Expand the history size
 export HISTFILESIZE=10000
 export HISTSIZE=500
