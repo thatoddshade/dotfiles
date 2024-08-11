@@ -499,27 +499,6 @@ phpconfig() {
 	fi
 }
 
-# Edit the MySQL configuration file
-mysqlconfig() {
-	if [ -f /etc/my.cnf ]; then
-		sedit /etc/my.cnf
-	elif [ -f /etc/mysql/my.cnf ]; then
-		sedit /etc/mysql/my.cnf
-	elif [ -f /usr/local/etc/my.cnf ]; then
-		sedit /usr/local/etc/my.cnf
-	elif [ -f /usr/bin/mysql/my.cnf ]; then
-		sedit /usr/bin/mysql/my.cnf
-	elif [ -f ~/my.cnf ]; then
-		sedit ~/my.cnf
-	elif [ -f ~/.my.cnf ]; then
-		sedit ~/.my.cnf
-	else
-		echo "Error: my.cnf file could not be found."
-		echo "Searching for possible locations:"
-		sudo updatedb && locate my.cnf
-	fi
-}
-
 # For some reason, rot13 pops up everywhere
 rot13() {
 	if [ $# -eq 0 ]; then
@@ -536,9 +515,7 @@ trim() {
 	var="${var%"${var##*[![:space:]]}"}" # remove trailing whitespace characters
 	echo -n "$var"
 }
-# GitHub Titus Additions
 
-# check out cool vid: https://www.youtube.com/watch?v=aghxkpyRVDY
 eval "$(zoxide init --cmd cd bash)"
 
 
@@ -548,11 +525,11 @@ eval "$(zoxide init --cmd cd bash)"
 
 export PATH=$PATH:"$HOME/.local/bin:$HOME/.cargo/bin:/var/lib/flatpak/exports/bin:/.local/share/flatpak/exports/bin"
 
-# Install Starship - curl -sS https://starship.rs/install.sh | sh
+# install Starship - curl -sS https://starship.rs/install.sh | sh
 
 eval "$(starship init bash)"
 
-#Autojump
+# autojump
 
 if [ -f "/usr/share/autojump/autojump.sh" ]; then
 	. /usr/share/autojump/autojump.sh
@@ -591,8 +568,6 @@ alias t='todo.sh -d ~/todo.txt/todo.cfg'
 		--color=spinner:#24837B,info:#24837B,separator:#1C1B1A
 		--color=pointer:#AD8301,marker:#AF3029,prompt:#AD8301"
 
-
-# being an r/AnarchyChess member is required for context
 alias car="cat"
 alias lolcar="lolcat"
 
