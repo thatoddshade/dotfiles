@@ -107,11 +107,6 @@ alias ps='ps auxf'
 alias ping='ping -c 10'
 alias less='less -R'
 alias cls='clear'
-alias multitail='multitail --no-repeat -c'
-alias freshclam='sudo freshclam'
-
-# cd into the old directory
-alias bd='cd "$OLDPWD"'
 
 # Remove a directory and all files
 alias rmd='/bin/rm  --recursive --force --verbose '
@@ -520,16 +515,6 @@ export PATH=$PATH:"$HOME/.local/bin:$HOME/.cargo/bin:/var/lib/flatpak/exports/bi
 # install Starship - curl -sS https://starship.rs/install.sh | sh
 
 eval "$(starship init bash)"
-
-# autojump
-
-if [ -f "/usr/share/autojump/autojump.sh" ]; then
-	. /usr/share/autojump/autojump.sh
-elif [ -f "/usr/share/autojump/autojump.bash" ]; then
-	. /usr/share/autojump/autojump.bash
-else
-	echo "can't found the autojump script"
-fi
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
