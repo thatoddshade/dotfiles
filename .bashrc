@@ -454,19 +454,6 @@ apachelog() {
 	fi
 }
 
-# Edit the Apache configuration
-apacheconfig() {
-	if [ -f /etc/httpd/conf/httpd.conf ]; then
-		sedit /etc/httpd/conf/httpd.conf
-	elif [ -f /etc/apache2/apache2.conf ]; then
-		sedit /etc/apache2/apache2.conf
-	else
-		echo "Error: Apache config file could not be found."
-		echo "Searching for possible locations:"
-		sudo updatedb && locate httpd.conf && locate apache2.conf
-	fi
-}
-
 # For some reason, rot13 pops up everywhere
 rot13() {
 	if [ $# -eq 0 ]; then
