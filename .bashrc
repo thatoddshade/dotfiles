@@ -445,15 +445,6 @@ function whatsmyip() {
 	curl -s ifconfig.me
 }
 
-# View Apache logs
-apachelog() {
-	if [ -f /etc/httpd/conf/httpd.conf ]; then
-		cd /var/log/httpd && ls -xAh && multitail --no-repeat -c -s 2 /var/log/httpd/*_log
-	else
-		cd /var/log/apache2 && ls -xAh && multitail --no-repeat -c -s 2 /var/log/apache2/*.log
-	fi
-}
-
 # For some reason, rot13 pops up everywhere
 rot13() {
 	if [ $# -eq 0 ]; then
