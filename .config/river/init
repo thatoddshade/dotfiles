@@ -1,0 +1,198 @@
+#!/bin/sh
+
+main_modifier=Super
+#main_modifier=Alt
+
+riverctl map normal $main_modifier Q spawn foot
+riverctl map normal $main_modifier R spawn "bemenu-run --binding vim --vim-esc-exits --list '16 down' --prompt run"
+#riverctl map normal $main_modifier+Shift Return spawn foot
+
+# reload river configuration
+riverctl map normal $main_modifier+Shift R spawn "~/.config/river/init"
+
+# close focused view
+riverctl map normal $main_modifier C close
+
+# exit river
+riverctl map normal $main_modifier+Shift M exit
+
+riverctl map normal $main_modifier+Shift Delete spawn 'systemctl $(echo -e "suspend\nhybrid-sleep\nhibernate\npoweroff\nkexec\nreboot\n" | bemenu --binding vim --vim-esc-exits --list "6 down" --ignorecase --prompt POWER --prefix systemctl)'
+
+# focus the next or the previous view in layout stack
+#riverctl map normal $main_modifier J focus-view next
+#riverctl map normal $main_modifier K focus-view previous
+riverctl map normal $main_modifier H focus-view left
+riverctl map normal $main_modifier J focus-view down
+riverctl map normal $main_modifier K focus-view up
+riverctl map normal $main_modifier L focus-view right
+
+# swap the focused view with the next or the previous in the layout stack
+#riverctl map normal $main_modifier+Shift J swap next
+#riverctl map normal $main_modifier+Shift K swap previous
+riverctl map normal $main_modifier+Shift H swap left
+riverctl map normal $main_modifier+Shift J swap down
+riverctl map normal $main_modifier+Shift K swap up
+riverctl map normal $main_modifier+Shift L swap right
+
+# focus the next or the previous output
+riverctl map normal $main_modifier Period focus-output next
+riverctl map normal $main_modifier Comma focus-output previous
+
+# send the focused view to the next or the previous output
+riverctl map normal $main_modifier+Shift Period send-to-output next
+riverctl map normal $main_modifier+Shift Comma send-to-output previous
+
+# bump the focused view to the top of the layout stack
+riverctl map normal $main_modifier Return zoom
+
+# decrease or increase the main ratio of rivertile(1)
+#riverctl map normal $main_modifier H send-layout-cmd rivertile "main-ratio -0.05"
+#riverctl map normal $main_modifier L send-layout-cmd rivertile "main-ratio +0.05"
+
+# increment or decrement the main count of rivertile(1)
+#riverctl map normal $main_modifier+Shift H send-layout-cmd rivertile "main-count +1"
+#riverctl map normal $main_modifier+Shif L send-layout-cmd rivertile "main-count -1"
+
+# move views
+view_movement_delta=100
+riverctl map normal $main_modifier+Alt H move left $view_movement_delta
+riverctl map normal $main_modifier+Alt J move down $view_movement_delta
+riverctl map normal $main_modifier+Alt K move up $view_movement_delta
+riverctl map normal $main_modifier+Alt L move right $view_movement_delta
+
+riverctl map-pointer normal $main_modifier BTN_LEFT move-view
+
+# snap views to screen edges
+riverctl map normal $main_modifier+Alt+Control H snap left
+riverctl map normal $main_modifier+Alt+Control J snap down
+riverctl map normal $main_modifier+Alt+Control K snap up
+riverctl map normal $main_modifier+Alt+Control L snap right
+
+# resize views
+view_resizing_delta=100
+riverctl map normal $main_modifier+Alt+Shift H resize horizontal -$view_resizing_delta
+riverctl map normal $main_modifier+Alt+Shift J resize vertical $view_resizing_delta
+riverctl map normal $main_modifier+Alt+Shift K resize vertical -$view_resizing_delta
+riverctl map normal $main_modifier+Alt+Shift L resize horizontal $view_resizing_delta
+
+riverctl map-pointer normal $main_modifier BTN_RIGHT resize-view
+riverctl map-pointer normal $main_modifier+Shift BTN_LEFT resize-view
+
+# toggle float
+riverctl map-pointer normal $main_modifier BTN_MIDDLE toggle-float
+riverctl map normal $main_modifier W toggle-float
+
+for i in $(seq 1 9)
+do
+    tags=$((1 << ($i - 1)))
+
+    # $main_modifier+[1-9] to focus tag [0-8]
+    riverctl map normal $main_modifier $i set-focused-tags $tags
+
+    # $main_modifier+Shift+[1-9] to tag focused view with tag [0-8]
+    riverctl map normal $main_modifier+Shift $i set-view-tags $tags
+
+    # $main_modifier+Control+[1-9] to toggle focus of tag [0-8]
+    riverctl map normal $main_modifier+Control $i toggle-focused-tags $tags
+
+    # $main_modifier+Shift+Control+[1-9] to toggle tag [0-8] of focused view
+    riverctl map normal $main_modifier+Shift+Control $i toggle-view-tags $tags
+done
+
+all_tags=$(((1 << 32) - 1))
+
+# focus all tags
+riverctl map normal $main_modifier 0 set-focused-tags $all_tags
+
+# tag focused view with all tags
+riverctl map normal $main_modifier+Shift 0 set-view-tags $all_tags
+
+## toggle focus on all tags
+#riverctl map normal $main_modifier+Control 0 toggle-focused-tags $all_tags
+#
+## toggle all tags of focused view
+#riverctl map normal $main_modifier+Shift+Control 0 toggle-view-tags $all_tags
+
+# toggle fullscreen
+riverctl map normal $main_modifier F toggle-fullscreen
+
+# change layout orientation
+riverctl map normal $main_modifier Up    send-layout-cmd rivertile "main-location top"
+riverctl map normal $main_modifier Right send-layout-cmd rivertile "main-location right"
+riverctl map normal $main_modifier Down  send-layout-cmd rivertile "main-location bottom"
+riverctl map normal $main_modifier Left  send-layout-cmd rivertile "main-location left"
+
+# declare a passthrough mode. this mode has only a single mapping to return to
+# normal mode. this makes it useful for testing a nested wayland compositor
+#riverctl declare-mode passthrough
+riverctl declare-mode lock
+
+# enter passthrough mode
+#riverctl map normal $main_modifier F11 enter-mode passthrough
+riverctl map normal $main_modifier G enter-mode lock
+riverctl map normal $main_modifier F11 enter-mode lock
+
+# return to normal mode
+#riverctl map passthrough $main_modifier F11 enter-mode normal
+riverctl map lock $main_modifier G enter-mode normal
+riverctl map lock $main_modifier F11 enter-mode normal
+
+# various media key mapping examples for both normal and locked mode which do
+# not have a modifier
+for mode in normal locked
+do
+    # eject the optical drive (well if you still have one that is)
+    riverctl map $mode None XF86Eject spawn 'eject -T'
+
+    # control pulse audio volume with pamixer (https://github.com/cdemoulins/pamixer)
+    riverctl map $mode None XF86AudioRaiseVolume  spawn 'pamixer -i 5'
+    riverctl map $mode None XF86AudioLowerVolume  spawn 'pamixer -d 5'
+    riverctl map $mode None XF86AudioMute         spawn 'pamixer --toggle-mute'
+
+    # control MPRIS aware media players with playerctl (https://github.com/altdesktop/playerctl)
+    riverctl map $mode None XF86AudioMedia spawn 'playerctl play-pause'
+    riverctl map $mode None XF86AudioPlay  spawn 'playerctl play-pause'
+    riverctl map $mode None XF86AudioPrev  spawn 'playerctl previous'
+    riverctl map $mode None XF86AudioNext  spawn 'playerctl next'
+
+    # control screen backlight brightness with brightnessctl (https://github.com/Hummer12007/brightnessctl)
+    riverctl map $mode None XF86MonBrightnessUp   spawn 'brightnessctl set +5%'
+    riverctl map $mode None XF86MonBrightnessDown spawn 'brightnessctl set 5%-'
+done
+
+# set background and border colour
+riverctl border-width 2
+#riverctl background-color 0xfffcf0
+riverctl border-color-focused 0xaf3029
+riverctl border-color-unfocused 0x100f0f
+
+# set wallpaper
+pkill swaybg; setsid -f swaybg --image ~/Pictures/wallpapers/3.png
+
+# hide the cursor if it has not been moved for a given timeout
+#riverctl hide-cursor timeout 5000
+riverctl hide-cursor when-typing enabled
+
+# make the cursor warp to the focused view or output when it changes
+riverctl set-cursor-warp on-focus-change
+
+## set keyboard repeat rate
+#riverctl set-repeat 50 300
+#
+## Make all views with an app-id that starts with "float" and title "foo" start floating.
+#riverctl rule-add -app-id 'float*' -title 'foo' float
+#
+## Make all views with app-id "bar" and any title use client-side decorations
+#riverctl rule-add -app-id "bar" csd
+
+# set the keyboard layout
+#riverctl keyboard-layout eu
+#for mode in normal locked
+#do
+#    riverctl map $mode $main_modifier+Control Space spawn 'riverctl keyboard-layout $(echo -e "eu\nfr(oss)" | bemenu --binding vim --vim-normal-mode --vim-esc-exits --list "16 down" --prompt "pick a keyboard layout" --prefix "riverctl keyboard-layout")'
+#done
+
+# set the default layout generator to be rivertile and start it.
+# river will send the process group of the init executable SIGTERM on exit.
+riverctl default-layout rivertile
+rivertile -view-padding 2 -outer-padding 2 &
