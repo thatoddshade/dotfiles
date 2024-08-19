@@ -117,6 +117,7 @@
 			#godot_4
 			#haskellPackages.game-of-life
 			imv
+			inputs.dmm.packages.x86_64-linux
 			lavat
 			mako
 			morewaita-icon-theme
@@ -142,6 +143,7 @@
 			wget
 			wiki-tui
 			wl-clipboard
+			yt-dlp
 			zellij
 			zola
 			zoxide

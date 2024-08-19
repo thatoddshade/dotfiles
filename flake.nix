@@ -3,7 +3,6 @@
 
 	inputs = {
 		nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-24.05";
-		#nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
 		home-manager = {
 			url = "github:nix-community/home-manager/release-24.05";
@@ -13,7 +12,12 @@
 		#nix-colors.url = "github:misterio77/nix-colors";
 		stylix.url = "github:danth/stylix";
 
-		systems.url = "github:nix-systems/default";
+		#systems.url = "github:nix-systems/default";
+
+		dmm = {
+			url = "tarball+https://git.fawkes.io/mtnash/dmm/archive/stable.tar.gz";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 	
 		xremap-flake.url = "github:xremap/nix-flake";
 	};
@@ -22,18 +26,16 @@
 	let
 		inherit (self) outputs;
 
-		#systems = [
-		#	"aarch64-linux"
-		#	"i686-linux"
-		#	"x86_64-linux"
-		#	"aarch64-darwin"
-		#	"x86_64-darwin"
-		#];
+		systems = [
+			"aarch64-linux"
+			"i686-linux"
+			"x86_64-linux"
+			"aarch64-darwin"
+			"x86_64-darwin"
+		];
 
 
 		forAllSystems = nixpkgs.lib.genAttrs systems;
-
-		#pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
 
 		wallpaperDirectory = ./wallpapers;
 	in
@@ -55,13 +57,8 @@
 		wallpaper = wallpaperDirectory + "/3.png";
 
 		nixosConfigurations = {
-			#nixos = nixpkgs.lib.nixosSystem {
 			lontra-canadensis = nixpkgs.lib.nixosSystem {
-				#specialArgs = {inherit inputs;};
-				specialArgs = {
-					inherit inputs outputs;
-					#inherit pkgs-unstable;
-				};
+				specialArgs = {inherit inputs outputs;};
 				modules = [
 					./nixos/configuration.nix
 					inputs.stylix.nixosModules.stylix
@@ -70,7 +67,6 @@
 		};
 
 		homeConfigurations = {
-			#"demo@nixos" = home-manager.lib.homeManagerConfiguration {
 			"demo" = home-manager.lib.homeManagerConfiguration {
 				pkgs = nixpkgs.legacyPackages.x86_64-linux;
 				extraSpecialArgs = {
