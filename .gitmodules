@@ -1,12 +1,12 @@
 [submodule ".config/nvim"]
-	path = .config/nvim
+	path = home-manager/files/config/nvim
 	url = https://github.com/thatoddshade/nvim
 [submodule "arrpc"]
-	path = arrpc
+	path = home-manager/files/arrpc
 	url = https://github.com/OpenAsar/arrpc.git
 [submodule ".mozilla/firefox"]
-	path = .mozilla/firefox
+	path = home-manager/files/mozilla/firefox
 	url = https://github.com/thatoddshade/firefox
 [submodule ".config/GIMP"]
-	path = .config/GIMP
+	path = home-manager/files/config/GIMP
 	url = https://github.com/thatoddshade/GIMP
