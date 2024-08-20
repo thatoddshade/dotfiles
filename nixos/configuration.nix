@@ -117,7 +117,7 @@
 			#godot_4
 			#haskellPackages.game-of-life
 			imv
-			inputs.dmm.packages.x86_64-linux
+			inputs.dmm.packages.x86_64-linux.default
 			lavat
 			mako
 			morewaita-icon-theme
