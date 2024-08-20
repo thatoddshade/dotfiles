@@ -9,7 +9,6 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		#nix-colors.url = "github:misterio77/nix-colors";
 		stylix.url = "github:danth/stylix";
 
 		#systems.url = "github:nix-systems/default";
