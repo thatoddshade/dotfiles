@@ -3,11 +3,14 @@
 
 	inputs = {
 		nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-24.05";
+		nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
 		home-manager = {
 			url = "github:nix-community/home-manager/release-24.05";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+
+		nixos-cli.url = "github:water-sucks/nixos";
 
 		stylix.url = "github:danth/stylix";
 
@@ -21,7 +24,7 @@
 		xremap-flake.url = "github:xremap/nix-flake";
 	};
 
-	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, stylix, ... }@inputs: 
+	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixos-cli, stylix, ... }@inputs: 
 	let
 		inherit (self) outputs;
 
@@ -60,7 +63,8 @@
 				specialArgs = {inherit inputs outputs;};
 				modules = [
 					./nixos/configuration.nix
-					inputs.stylix.nixosModules.stylix
+					nixos-cli.nixosModules.nixos-cli
+					stylix.nixosModules.stylix
 				];
 			};
 		};
