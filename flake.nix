@@ -62,7 +62,7 @@
 			lontra-canadensis = nixpkgs.lib.nixosSystem {
 				specialArgs = {inherit inputs outputs;};
 				modules = [
-					./nixos/configuration.nix
+					./hosts/lontra-canadensis/configuration.nix
 					nixos-cli.nixosModules.nixos-cli
 					stylix.nixosModules.stylix
 				];
