@@ -101,6 +101,10 @@
 
 			userName = "thatoddshade";
 			userEmail = "thatoddshade+git@proton.me";
+			extraConfig.credential = {
+				"https://github.com".helper = "!nix run nixpkgs#gh auth git-credential";
+				"https://gist.github.com".helper = "!nix run nixpkgs#gh auth git-credential";
+			};
 		};
 	};
 
