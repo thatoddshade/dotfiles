@@ -21,7 +21,7 @@
 
 	nix.settings.experimental-features = ["nix-command" "flakes" ];
 
-	networking.hostName = "paul-laptop";
+	networking.hostName = "lontra-canadensis-wsl";
 
 	networking.networkmanager.enable = true;
 	time.timeZone = "Europe/Paris";
