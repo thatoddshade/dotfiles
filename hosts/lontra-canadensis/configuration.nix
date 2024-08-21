@@ -143,6 +143,7 @@
 			wget
 			wiki-tui
 			wl-clipboard
+			wlr-randr
 			yt-dlp
 			zellij
 			zola
