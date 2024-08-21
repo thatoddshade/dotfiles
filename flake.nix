@@ -11,6 +11,7 @@
 		};
 
 		nixos-cli.url = "github:water-sucks/nixos";
+		nixos-wsl.url = "github:nix-community/NixOS-WSL";
 
 		stylix.url = "github:danth/stylix";
 
@@ -20,7 +21,6 @@
 			url = "tarball+https://git.fawkes.io/mtnash/dmm/archive/stable.tar.gz";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
-	
 		xremap-flake.url = "github:xremap/nix-flake";
 	};
 
@@ -35,7 +35,6 @@
 			"aarch64-darwin"
 			"x86_64-darwin"
 		];
-
 
 		forAllSystems = nixpkgs.lib.genAttrs systems;
 
@@ -58,15 +57,8 @@
 		inherit wallpaperDirectory;
 		wallpaper = wallpaperDirectory + "/3.png";
 
-		nixosConfigurations = {
-			lontra-canadensis = nixpkgs.lib.nixosSystem {
-				specialArgs = {inherit inputs outputs;};
-				modules = [
-					./hosts/lontra-canadensis/configuration.nix
-					nixos-cli.nixosModules.nixos-cli
-					stylix.nixosModules.stylix
-				];
-			};
+		nixosConfigurations = import ./hosts {
+			inherit nixpkgs inputs outputs nixos-cli stylix;
 		};
 
 		homeConfigurations = {

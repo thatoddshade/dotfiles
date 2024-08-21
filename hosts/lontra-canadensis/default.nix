@@ -1,13 +1,10 @@
 {
 	inputs,
 	outputs,
-	lib,
-	config,
-	pkgs,
-	...
+	lib, config, pkgs, ...
 }: {
 	imports = [
-		./hardware-configuration.nix
+		./hardware.nix
 		inputs.xremap-flake.nixosModules.default
 		outputs.nixosModules.style
 	];
@@ -189,6 +186,7 @@
 			vimAlias = true;
 		};
 		nh.enable = true;
+		nix-ld.enable = true;
 		thefuck.enable = true;
 		river.enable = true;
 		#waybar.enable = true;
