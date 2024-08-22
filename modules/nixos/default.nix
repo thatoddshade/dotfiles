@@ -3,4 +3,5 @@
 {
 	# module files
 	style = import ../style.nix;
+	browser = import ./browser.nix;
 }

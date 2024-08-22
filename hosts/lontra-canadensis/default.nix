@@ -7,6 +7,7 @@
 		./hardware.nix
 		inputs.xremap-flake.nixosModules.default
 		outputs.nixosModules.style
+		outputs.nixosModules.browser
 	];
 
 	nixpkgs = {
@@ -156,11 +157,6 @@
 		bash = {
 			interactiveShellInit = "set -o vi";
 			undistractMe.enable = true;
-		};
-		firefox = {
-			enable = true;
-			#package = pkgs.firefox-bin;
-			package = pkgs.unstable.firefox-bin;
 		};
 		fzf = {
 			fuzzyCompletion = true;
