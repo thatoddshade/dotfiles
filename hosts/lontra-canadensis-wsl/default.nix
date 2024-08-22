@@ -5,13 +5,14 @@
 # NixOS-WSL specific options are documented on the NixOS-WSL repository:
 # https://github.com/nix-community/NixOS-WSL
 
-{ config, inputs, lib, pkgs, ... }:
+{ config, inputs, outputs, lib, pkgs, ... }:
 
 {
 	imports = [
 		./hardware.nix
 		# <nixos-wsl/modules>
 		inputs.nixos-wsl.nixosModules.wsl
+		outputs.nixosModules.timeAndLanguage
 	];
 
 	# bootloader
@@ -24,9 +25,7 @@
 	networking.hostName = "lontra-canadensis-wsl";
 
 	networking.networkmanager.enable = true;
-	time.timeZone = "Europe/Paris";
 
-	i18n.defaultLocale = "fr_FR.UTF-8";
 
 	wsl.enable = true;
 	wsl.defaultUser = "nixos";

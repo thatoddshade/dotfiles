@@ -8,6 +8,7 @@
 		inputs.xremap-flake.nixosModules.default
 		outputs.nixosModules.style
 		outputs.nixosModules.browser
+		outputs.nixosModules.timeAndLanguage 
 	];
 
 	nixpkgs = {
@@ -61,15 +62,8 @@
 		#wireless.enable = true;	# Enables wireless support via wpa_supplicant.
 	};
 
-	# Set your time zone.
-	time.timeZone = "Europe/Paris";
-
-	# select internationalisation properties
-	i18n.defaultLocale = "fr_FR.UTF-8";
-
 	services = {
 		# configure keymap in X11
-		xserver.xkb.layout = "eu";
 		#xserver.xkb.options = "eurosign:e,caps:escape";
 
 		# enable CUPS to allow printing documents
