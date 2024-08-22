@@ -5,13 +5,13 @@
 # NixOS-WSL specific options are documented on the NixOS-WSL repository:
 # https://github.com/nix-community/NixOS-WSL
 
-{ config, lib, pkgs, ... }:
+{ config, inputs, lib, pkgs, ... }:
 
 {
 	imports = [
 		./hardware.nix
 		# <nixos-wsl/modules>
-		inputs.nixos-wsl.nixosModules
+		inputs.nixos-wsl.nixosModules.wsl
 	];
 
 	# bootloader
