@@ -1,5 +1,5 @@
 # configuration for any personal computers
-{pkgs}:
+{nixpkgs, ...}:
 {
 	programs = nixpkgs.lib.genAttrs [
 		"htop"
