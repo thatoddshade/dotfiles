@@ -26,7 +26,6 @@
 
 	networking.networkmanager.enable = true;
 
-
 	wsl.enable = true;
 	wsl.defaultUser = "nixos";
 
@@ -76,12 +75,6 @@
 		#sway.enable = true;
 		#hyprland.enable = true;
 	};
-
-	#xdg.portal.wlr.enable = true;
-
-	services.xserver.desktopManager.gnome.enable = true;
-	services.xserver.displayManager.gdm.enable = true;
-
 
 	# This value determines the NixOS release from which the default
 	# settings for stateful data, like file locations and database versions
