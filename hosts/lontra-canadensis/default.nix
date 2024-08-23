@@ -221,7 +221,9 @@
 	# networking.firewall.allowedUDPPorts = [ ... ];
 	# Or disable the firewall altogether.
 	# networking.firewall.enable = false;
-	
+
+	xdg.portal.wlr.enable = true;
+
 	system = {
 		# from https://nixos.wiki/wiki/Automatic_system_upgrades
 		autoUpgrade = {
