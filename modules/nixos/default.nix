@@ -2,8 +2,9 @@
 
 {
 	# module files
-	style = import ../style.nix;
 	browser = import ./browser.nix;
-	timeAndLanguage = import ./time_and_language.nix;
 	git = import ./git.nix;
+	programs = import ./programs.nix;
+	style = import ../style.nix;
+	timeAndLanguage = import ./time_and_language.nix;
 }
