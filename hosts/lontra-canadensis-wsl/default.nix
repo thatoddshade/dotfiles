@@ -12,8 +12,9 @@
 		./hardware.nix
 		# <nixos-wsl/modules>
 		inputs.nixos-wsl.nixosModules.wsl
-		outputs.nixosModules.timeAndLanguage
 		outputs.nixosModules.git
+		outputs.nixosModules.programs
+		outputs.nixosModules.timeAndLanguage
 	];
 
 	# bootloader
@@ -63,14 +64,12 @@
 			fuzzyCompletion = true;
 			keybindings = true;
 		};
-		htop.enable = true;
 		neovim = {
 			enable = true;
 			defaultEditor = true;
 			viAlias = true;
 			vimAlias = true;
 		};
-		thefuck.enable = true;
 		#starship.enable = true;
 		#sway.enable = true;
 		#hyprland.enable = true;

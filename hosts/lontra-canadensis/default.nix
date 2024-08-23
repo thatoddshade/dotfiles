@@ -6,10 +6,11 @@
 	imports = [
 		./hardware.nix
 		inputs.xremap-flake.nixosModules.default
-		outputs.nixosModules.style
 		outputs.nixosModules.browser
-		outputs.nixosModules.timeAndLanguage
 		outputs.nixosModules.git
+		outputs.nixosModules.programs
+		outputs.nixosModules.style
+		outputs.nixosModules.timeAndLanguage
 	];
 
 	nixpkgs = {
@@ -161,18 +162,12 @@
 			enable = true;
 			enableSSHSupport = true;
 		};
-		htop.enable = true;
-		lazygit.enable = true;
-		mtr.enable = true;
 		neovim = {
 			enable = true;
 			defaultEditor = true;
 			viAlias = true;
 			vimAlias = true;
 		};
-		nh.enable = true;
-		nix-ld.enable = true;
-		thefuck.enable = true;
 		river.enable = true;
 		#waybar.enable = true;
 	};
