@@ -5,4 +5,5 @@
 	style = import ../style.nix;
 	browser = import ./browser.nix;
 	timeAndLanguage = import ./time_and_language.nix;
+	git = import ./git.nix;
 }

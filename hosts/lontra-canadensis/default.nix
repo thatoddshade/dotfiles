@@ -8,7 +8,8 @@
 		inputs.xremap-flake.nixosModules.default
 		outputs.nixosModules.style
 		outputs.nixosModules.browser
-		outputs.nixosModules.timeAndLanguage 
+		outputs.nixosModules.timeAndLanguage
+		outputs.nixosModules.git
 	];
 
 	nixpkgs = {
@@ -156,12 +157,6 @@
 			fuzzyCompletion = true;
 			keybindings = true;
 		}; 
-		git = {
-			enable = true;
-			config = {
-				init.defaultBranch = "trunk";
-			};
-		};
 		gnupg.agent = {
 			enable = true;
 			enableSSHSupport = true;

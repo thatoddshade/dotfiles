@@ -13,6 +13,7 @@
 		# <nixos-wsl/modules>
 		inputs.nixos-wsl.nixosModules.wsl
 		outputs.nixosModules.timeAndLanguage
+		outputs.nixosModules.git
 	];
 
 	# bootloader
@@ -62,7 +63,6 @@
 			fuzzyCompletion = true;
 			keybindings = true;
 		};
-		git.enable = true;
 		htop.enable = true;
 		neovim = {
 			enable = true;
