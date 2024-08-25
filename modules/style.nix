@@ -16,7 +16,6 @@
 			};
 			sansSerif = {
 				package = pkgs.jost;
-				#name = "Jost 500 Medium";
 				name = "Jost Medium";
 	
 			};
