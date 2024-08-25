@@ -56,6 +56,7 @@
 		w3m
 		wiki-tui
 		zellij
+		zola
 		zoxide
 	];
 	
