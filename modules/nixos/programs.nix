@@ -1,7 +1,7 @@
 # configuration for any personal computers
-{nixpkgs, ...}:
+{lib, ...}:
 {
-	programs = nixpkgs.lib.genAttrs [
+	programs = lib.genAttrs [
 		"htop"
 		"lazygit"
 		"mtr"
