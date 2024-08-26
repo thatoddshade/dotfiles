@@ -14,10 +14,16 @@
 				package = pkgs.fira-code;
 				name = "FiraCode";
 			};
+
 			sansSerif = {
 				package = pkgs.jost;
 				name = "Jost Medium";
 	
+			};
+			
+			serif = {
+				package = pkgs.garamond-libre;
+				name = "Garamond Libre"
 			};
 		};
 
