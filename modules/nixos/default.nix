@@ -4,6 +4,7 @@
 	# module files
 	browser = import ./browser.nix;
 	git = import ./git.nix;
+	packages = import ./packages.nix;
 	programs = import ./programs.nix;
 	style = import ../style.nix;
 	timeAndLanguage = import ./time_and_language.nix;
