@@ -9,6 +9,7 @@
 	imports = [
 		./hardware.nix
 		inputs.xremap-flake.nixosModules.default
+		outputs.nixosModules.bash
 		outputs.nixosModules.browser
 		outputs.nixosModules.git
 		outputs.nixosModules.packages
@@ -154,10 +155,6 @@
 
 	# configure programs
 	programs = {
-		bash = {
-			interactiveShellInit = "set -o vi";
-			undistractMe.enable = true;
-		};
 		fzf = {
 			fuzzyCompletion = true;
 			keybindings = true;

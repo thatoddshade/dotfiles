@@ -2,6 +2,7 @@
 
 {
 	# module files
+	bash = import ./bash.nix;
 	browser = import ./browser.nix;
 	git = import ./git.nix;
 	packages = import ./packages.nix;

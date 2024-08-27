@@ -12,6 +12,7 @@
 		./hardware.nix
 		# <nixos-wsl/modules>
 		inputs.nixos-wsl.nixosModules.wsl
+		outputs.nixosModules.bash
 		outputs.nixosModules.git
 		outputs.nixosModules.packages
 		outputs.nixosModules.programs
