@@ -17,7 +17,7 @@
 
 			sansSerif = {
 				package = pkgs.jost;
-				name = "Jost* Book";
+				name = "Jost*";
 	
 			};
 			
