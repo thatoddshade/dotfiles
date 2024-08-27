@@ -23,7 +23,7 @@
 			
 			serif = {
 				package = pkgs.garamond-libre;
-				name = "Garamond Libre"
+				name = "Garamond Libre";
 			};
 		};
 
