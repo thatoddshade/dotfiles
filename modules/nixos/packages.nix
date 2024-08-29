@@ -1,8 +1,33 @@
 { pkgs, ... }:
 {
-	environment = {
-		systemPackages = with pkgs; [
-			hello
-		];
-	};
+	environment.systemPackages = with pkgs; [
+		asciinema
+		asciinema-agg
+		borgbackup
+		curl
+		fastfetch
+		fzf
+		gcc
+		gh
+		gnumake
+		hello
+		inputs.dmm.packages.x86_64-linux.default
+		lavat
+		lazygit
+		mprocs
+		pipes-rs
+		ripgrep
+		starship
+		trash-cli
+		tree
+		unp
+		unzip
+		w3m
+		wget
+		wiki-tui
+		yt-dlp
+		zola
+		zellij
+		zoxide
+	];
 }

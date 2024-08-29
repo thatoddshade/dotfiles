@@ -33,34 +33,6 @@
 	wsl.enable = true;
 	wsl.defaultUser = "nixos";
 
-	environment.systemPackages = with pkgs; [
-		alacritty
-		bemenu
-		borgbackup
-		curl
-		eww
-		fastfetch
-		firefox-bin
-		fzf
-		gh
-		godot_4
-		lazygit
-		mprocs
-		mpv
-		pipes-rs
-		ripgrep
-		rustup
-		starship
-		stow
-		trash-cli
-		tree
-		unzip
-		w3m
-		wiki-tui
-		zellij
-		zola
-		zoxide
-	];
 	
 	programs = {
 		fzf = {

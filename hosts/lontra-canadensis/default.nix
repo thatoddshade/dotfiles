@@ -98,55 +98,27 @@
 		systemPackages = with pkgs; [
 			alacritty
 			#ags
-			asciinema
-			asciinema-agg
 			bemenu
-			#borgbackup
 			#blockench
 			cpu-x
-			curl
 			eww
-			fastfetch
-			fzf
-			gcc
 			genact
-			gh
 			#gimp
-			gnumake
 			#godot_4
 			#haskellPackages.game-of-life
 			imv
-			inputs.dmm.packages.x86_64-linux.default
-			lavat
 			mako
 			morewaita-icon-theme
-			mprocs
 			mpv
 			nvd
-			pipes-rs
-			ripgrep
 			#ristate
-			rustup
 			sandbar
-			starship
-			stow
 			swaybg
 			swayimg
 			transmission
-			trash-cli
-			tree
-			unp
-			unzip
-			w3m
 			wezterm
-			wget
-			wiki-tui
 			wl-clipboard
 			wlr-randr
-			yt-dlp
-			zellij
-			zola
-			zoxide
 		];
 		sessionVariables = rec {
 			FLAKE = "/home/demo/dotfiles";
