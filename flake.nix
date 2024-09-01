@@ -24,7 +24,7 @@
 		xremap-flake.url = "github:xremap/nix-flake";
 	};
 
-	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixos-cli, stylix, ... }@inputs: 
+	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixos-cli, nixos-wsl, stylix, ... }@inputs: 
 	let
 		inherit (self) outputs;
 
@@ -58,7 +58,7 @@
 		wallpaper = wallpaperDirectory + "/3.png";
 
 		nixosConfigurations = import ./hosts {
-			inherit nixpkgs inputs outputs nixos-cli stylix;
+			inherit nixpkgs inputs outputs nixos-cli nixos-wsl stylix;
 		};
 
 		homeConfigurations = {

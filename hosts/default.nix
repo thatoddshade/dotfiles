@@ -1,4 +1,4 @@
-{nixpkgs, inputs, outputs, nixos-cli, stylix, ...}:
+{nixpkgs, inputs, outputs, nixos-cli, nixos-wsl, stylix, ...}:
 nixpkgs.lib.genAttrs [
 		"lontra-canadensis"
 		"lontra-canadensis-wsl"
@@ -8,6 +8,7 @@ nixpkgs.lib.genAttrs [
 		modules = [
 			(./. + "/${host}")
 			nixos-cli.nixosModules.nixos-cli
+			nixos-wsl.nixosModules.default
 			stylix.nixosModules.stylix
 		];
 	}
