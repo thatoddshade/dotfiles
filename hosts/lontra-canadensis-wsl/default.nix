@@ -32,6 +32,8 @@
 	wsl.enable = true;
 	wsl.defaultUser = "nixos";
 
+	users.users.nixos.extraGroups = [ "audio" ];
+
 	
 	programs = {
 		fzf = {
