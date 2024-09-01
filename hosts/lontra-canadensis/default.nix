@@ -9,6 +9,7 @@
 	imports = [
 		./hardware.nix
 		inputs.xremap-flake.nixosModules.default
+		outputs.nixosModules.audio
 		outputs.nixosModules.bash
 		outputs.nixosModules.browser
 		outputs.nixosModules.git
@@ -75,12 +76,6 @@
 
 		# enable CUPS to allow printing documents
 		printing.enable = true;
-
-		# enable sound
-		pipewire = {
-			enable = true;
-			pulse.enable = true;
-		};
 
 		# enable touchpad support (enabled default in most desktopManager)
 		libinput.enable = true;
