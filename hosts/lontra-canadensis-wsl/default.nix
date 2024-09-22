@@ -34,6 +34,11 @@
 
 	users.users.nixos.extraGroups = [ "audio" ];
 
+	environment = {
+		systemPackages = with pkgs; [
+			wsl-open
+		];
+	};
 	
 	programs = {
 		fzf = {
