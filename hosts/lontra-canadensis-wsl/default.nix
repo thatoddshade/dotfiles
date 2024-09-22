@@ -38,6 +38,9 @@
 		systemPackages = with pkgs; [
 			wsl-open
 		];
+		sessionVariables = rec {
+			FLAKE = "/home/nixos/dotfiles";
+		};
 	};
 	
 	programs = {
