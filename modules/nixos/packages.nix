@@ -15,6 +15,7 @@
 		lavat
 		lazygit
 		mprocs
+		newsboat
 		pipes-rs
 		ripgrep
 		starship
