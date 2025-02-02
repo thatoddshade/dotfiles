@@ -9,5 +9,6 @@
 	packages = import ./packages.nix;
 	programs = import ./programs.nix;
 	style = import ../style.nix;	# double period is **not** a mistake
+	silly = import ./silly.nix;
 	timeAndLanguage = import ./time_and_language.nix;
 }
