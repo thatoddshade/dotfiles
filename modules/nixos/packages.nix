@@ -17,6 +17,7 @@
 		mprocs
 		newsboat
 		pipes-rs
+		python3
 		ripgrep
 		starship
 		trash-cli
