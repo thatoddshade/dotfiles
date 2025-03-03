@@ -15,6 +15,7 @@
 		outputs.nixosModules.git
 		outputs.nixosModules.packages
 		outputs.nixosModules.programs
+		outputs.nixosModules.silly
 		outputs.nixosModules.timeAndLanguage
 	];
 
