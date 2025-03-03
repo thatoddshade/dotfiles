@@ -49,6 +49,7 @@
 			fuzzyCompletion = true;
 			keybindings = true;
 		};
+		bash.undistractMe.enable = false;
 		neovim = {
 			enable = true;
 			defaultEditor = true;
