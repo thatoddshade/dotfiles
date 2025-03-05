@@ -1,44 +1,51 @@
-{ config, lib, pkgs, ... }:
+# PAPAVER RHOEAS
+
+{ nixpkgs, inputs, outputs, lib, pkgs, ... }:
 
 {
-  # Simply install just the packages
-  environment.packages = with pkgs; [
-    # User-facing stuff that you really really want to have
-    vim # or some other editor, e.g. nano or neovim
+	imports = [
+		outputs.nixOnDroidModules.packages
+		#outputs.nixOnDroidModules.silly
+	];
+	
+	#nixpkgs = {
+	#	overlays = [
+	#		outputs.overlays.unstable-packages
+	#	];
+	#
+	#	config = {
+	#		allowUnfree = true;
+	#	};
+	#};
 
-    # Some common stuff that people expect to have
-    procps
-    killall
-    diffutils
-    findutils
-    utillinux
-    tzdata
-    hostname
-    man
-    gnugrep
-    gnupg
-    gnused
-    gnutar
-    bzip2
-    gzip
-    xz
-    zip
-    unzip
+	environment.sessionVariables = {
+		FLAKE = "$HOME/dotfiles";
+		motd = "this is THATODDSHADE's NIX-ON-DROID configuration! if nothing works, open an issue at either [its repository](https://github.com/thatoddshade/dotfiles) or [NIX-ON-DROID's](https://github.com/nix-community/nix-on-droid/issues) or try the rescue shell.";
+	};
 
-    git
-  ];
+	# backup etc files instead of failing to activate generation if a file already exists in /etc
+	environment.etcBackupExtension = ".bak";
 
-  # Backup etc files instead of failing to activate generation if a file already exists in /etc
-  environment.etcBackupExtension = ".bak";
+	# read the changelog before changing this value
+	system.stateVersion = "24.05";
 
-  # Read the changelog before changing this value
-  system.stateVersion = "24.05";
+	# set up nix for flakes
+	nix.extraOptions = ''
+		experimental-features = nix-command flakes
+	'';
 
-  # Set up nix for flakes
-  nix.extraOptions = ''
-    experimental-features = nix-command flakes
-  '';
+	android-integration = {
+		am.enable = true;
+		termux-open.enable = true;
+		termux-open-url.enable = true;
+		termux-reload-settings.enable = true;
+		termux-setup-storage.enable = true;
+		xdg-open.enable = true;
+	};
 
-  # Set your time zone
-  #time.timeZone = "Europe/Berlin";
+	terminal.colors = {
+		background = "#000000";
+		foreground = "#fffcf0";
+		cursor = "#fffcf0";
+	};
 }

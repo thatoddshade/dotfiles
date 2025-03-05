@@ -1,37 +1,29 @@
 { inputs, pkgs, ... }:
 {
-	environment.systemPackages = with pkgs; [
-		asciinema
-		asciinema-agg
-		borgbackup
+	environment.packages = with pkgs; [
+		#asciinema
+		#asciinema-agg
 		curl
 		fastfetch
 		fzf
-		gcc
 		gh
-		gnumake
-		hello
-		inputs.dmm.packages.x86_64-linux.default
-		lavat
+		git
 		lazygit
 		mprocs
-		newsboat
-		pipes-rs
-		python3
+		#python3
 		ripgrep
-		starship
+		#starship
 		trash-cli
 		tree
 		unp
 		w3m
 		wget
-		wiki-tui
-		yt-dlp
-		zola
+		#wiki-tui
+		#yt-dlp
+		#zola
 		zellij
 		zoxide
 
-		
 		procps
 		killall
 		diffutils
@@ -49,5 +41,10 @@
 		xz
 		zip
 		unzip
+
+		htop
+		#mtr
+		neovim
+		vim
 	];
 }
