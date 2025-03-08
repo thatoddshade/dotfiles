@@ -12,11 +12,9 @@
 		gnumake
 		hello
 		inputs.dmm.packages.x86_64-linux.default
-		lavat
 		lazygit
 		mprocs
 		newsboat
-		pipes-rs
 		python3
 		ripgrep
 		starship

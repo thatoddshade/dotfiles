@@ -2,7 +2,5 @@
 
 { inputs, pkgs, ... }:
 {
-	environment.systemPackages = with pkgs; [
-		hollywood
-	];
+	environment.systemPackages = with pkgs; import ../silly-packages.nix
 }

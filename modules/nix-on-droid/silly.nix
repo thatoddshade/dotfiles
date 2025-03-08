@@ -2,9 +2,5 @@
 
 { inputs, pkgs, ... }:
 {
-	environment.packages = with pkgs; [
-		hollywood
-		lavat
-		pipes-rs
-	];
+	environment.packages = with pkgs; import ../silly-packages.nix;
 }
