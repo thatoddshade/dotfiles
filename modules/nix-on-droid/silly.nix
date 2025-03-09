@@ -2,5 +2,5 @@
 
 { inputs, pkgs, ... }:
 {
-	environment.packages = with pkgs; import ../silly-packages.nix;
+	environment.packages = with pkgs; import ../package-lists/silly.nix;
 }
