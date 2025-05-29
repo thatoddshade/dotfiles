@@ -6,12 +6,14 @@
 		borgbackup
 		curl
 		fastfetch
+		ffmpeg
 		fzf
 		gcc
 		gh
 		gnumake
 		hello
 		inputs.dmm.packages.x86_64-linux.default
+		imagemagick
 		lazygit
 		mprocs
 		newsboat
