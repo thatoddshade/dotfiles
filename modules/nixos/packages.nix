@@ -5,6 +5,8 @@
 		asciinema-agg
 		borgbackup
 		curl
+		dysk
+		evil-helix
 		fastfetch
 		ffmpeg
 		fzf
@@ -14,10 +16,12 @@
 		hello
 		inputs.dmm.packages.x86_64-linux.default
 		imagemagick
+		kondo
 		lazygit
 		mprocs
 		newsboat
 		python3
+		rustup
 		ripgrep
 		starship
 		trash-cli

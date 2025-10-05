@@ -2,5 +2,9 @@
 
 { inputs, pkgs, ... }:
 {
-	environment.systemPackages = with pkgs; import ../package-lists/silly.nix;
+	environment.systemPackages = with pkgs; [
+		hollywood
+		lavat
+		pipes-rs
+	];
 }

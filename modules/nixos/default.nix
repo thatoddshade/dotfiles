@@ -10,5 +10,6 @@
 	programs = import ./programs.nix;
 	style = import ../style.nix;
 	silly = import ./silly.nix;
+	ssh = import ./ssh.nix;
 	timeAndLanguage = import ./time_and_language.nix;
 }
