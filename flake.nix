@@ -2,11 +2,12 @@
 	description = "thatoddshade's NIXOS, HOME MANAGER and NIX-ON-DROID flake configuration";
 
 	inputs = {
-		nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-24.05";
+		nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-24.11";
 		nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
+
 		home-manager = {
-			url = "github:nix-community/home-manager/release-24.05";
+			url = "github:nix-community/home-manager/release-24.11";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
@@ -24,10 +25,10 @@
 		xremap-flake.url = "github:xremap/nix-flake";
 
 		
-    		nix-on-droid = {
-    		  url = "github:nix-community/nix-on-droid/release-24.05";
-    		  inputs.nixpkgs.follows = "nixpkgs";
-    		};
+		nix-on-droid = {
+			url = "github:nix-community/nix-on-droid/release-24.05";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
 
 	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixos-cli, nixos-wsl, stylix, nix-on-droid, ... }@inputs: 
@@ -81,10 +82,10 @@
 
 		
 		nixOnDroidModules = import ./modules/nix-on-droid;
-    		nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
-    			pkgs = import nixpkgs { system = "aarch64-linux"; };
-    			modules = [ ./nix-on-droid ];
+			nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
+				pkgs = import nixpkgs { system = "aarch64-linux"; };
+				modules = [ ./nix-on-droid ];
 			extraSpecialArgs = { inherit nixpkgs inputs outputs; };
-    		};
+			};
 	};
 }
