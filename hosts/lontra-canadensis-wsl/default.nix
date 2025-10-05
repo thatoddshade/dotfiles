@@ -15,6 +15,7 @@
 		outputs.nixosModules.git
 		outputs.nixosModules.packages
 		outputs.nixosModules.programs
+		outputs.nixosModules.ssh
 		outputs.nixosModules.silly
 		outputs.nixosModules.timeAndLanguage
 	];
@@ -49,7 +50,7 @@
 			fuzzyCompletion = true;
 			keybindings = true;
 		};
-		bash.undistractMe.enable = false;
+		#bash.undistractMe.enable = false;
 		neovim = {
 			enable = true;
 			defaultEditor = true;
