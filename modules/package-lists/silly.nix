@@ -1,6 +1,0 @@
-[
-	hollywood
-	lavat
-	pipes-rs
-]       	
-        	
