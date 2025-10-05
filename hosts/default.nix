@@ -9,7 +9,7 @@ nixpkgs.lib.genAttrs [
 			(./. + "/${host}")
 			nixos-cli.nixosModules.nixos-cli
 			nixos-wsl.nixosModules.default
-			stylix.nixosModules.stylix
+			#stylix.nixosModules.stylix
 		];
 	}
 )
