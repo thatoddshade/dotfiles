@@ -22,7 +22,7 @@
 		kondo
 		lazygit
 		mprocs
-		newsboat
+		#newsboat
 		pandoc
 		python3
 		rustup
