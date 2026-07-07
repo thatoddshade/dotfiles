@@ -28,7 +28,7 @@
 		python3
 		plan9port
 		rustup
-		ripgrep
+		ripgrep	# Grep Rust rewrite
 		dart-sass
 		soupault
 		starship
