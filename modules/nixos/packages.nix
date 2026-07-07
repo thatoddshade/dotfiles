@@ -1,10 +1,12 @@
 { inputs, pkgs, ... }:
 {
 	environment.systemPackages = with pkgs; [
+		asciidoctor
 		asciinema
 		asciinema-agg
 		borgbackup
 		curl
+		cmark
 		dysk
 		evil-helix
 		fastfetch
@@ -20,9 +22,12 @@
 		lazygit
 		mprocs
 		newsboat
+		pandoc
 		python3
 		rustup
 		ripgrep
+		dart-sass
+		soupault
 		starship
 		trash-cli
 		tree
