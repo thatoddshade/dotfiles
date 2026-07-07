@@ -7,6 +7,5 @@
 		"mtr"
 		"nh"
 		"nix-ld"
-		"thefuck"
 	] (program: { enable = true; });
 }
