@@ -26,6 +26,7 @@
 		#newsboat
 		pandoc
 		python3
+		plan9port
 		rustup
 		ripgrep
 		dart-sass
