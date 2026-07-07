@@ -3,8 +3,10 @@
 { inputs, pkgs, ... }:
 {
 	environment.systemPackages = with pkgs; [
+		gti
 		hollywood
 		lavat
 		pipes-rs
+		sl
 	];
 }
