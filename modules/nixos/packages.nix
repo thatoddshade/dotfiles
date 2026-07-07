@@ -14,6 +14,10 @@
 		ffmpeg
 		fzf
 		#gcc
+		ghc # Haskell compiler
+		haskell-language-server # HSL
+		stack # Alternative to cabal, Haskell build tool
+		#haskellPackages.ghcup	# GHC toolchain installer for Haskell development		# one of its dependencies is for some reason marked as broken…
 		gh
 		#gnumake
 		hello
@@ -31,6 +35,7 @@
 		ripgrep	# Grep Rust rewrite
 		dart-sass
 		soupault
+		haskellPackages.stack
 		starship
 		tmux
 		trash-cli
