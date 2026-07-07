@@ -19,6 +19,7 @@
 		hello
 		#inputs.dmm.packages.x86_64-linux.default
 		imagemagick
+		jujutsu	# Git-compatible DVCS that is both simple and powerful: `jj`
 		kondo
 		lazygit
 		mprocs
