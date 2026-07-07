@@ -41,7 +41,7 @@
 			wsl-open
 		];
 		sessionVariables = rec {
-			FLAKE = "/home/nixos/dotfiles";
+			NH_FLAKE = "/home/nixos/dotfiles";
 		};
 	};
 	
