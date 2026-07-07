@@ -30,6 +30,7 @@
 		dart-sass
 		soupault
 		starship
+		tmux
 		trash-cli
 		tree
 		unp
