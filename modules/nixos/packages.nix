@@ -50,7 +50,7 @@
 		tzdata
 		hostname
 		man
-		gnugrep
+		#gnugrep
 		gnupg
 		gnused
 		gnutar
