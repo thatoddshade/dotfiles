@@ -5,6 +5,7 @@
 		asciinema
 		asciinema-agg
 		borgbackup
+		#clang
 		curl
 		cmark
 		dysk
@@ -12,9 +13,9 @@
 		fastfetch
 		ffmpeg
 		fzf
-		gcc
+		#gcc
 		gh
-		gnumake
+		#gnumake
 		hello
 		#inputs.dmm.packages.x86_64-linux.default
 		imagemagick
