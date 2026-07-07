@@ -18,10 +18,6 @@
 
 		#systems.url = "github:nix-systems/default";
 
-		dmm = {
-			url = "tarball+https://git.fawkes.io/mtnash/dmm/archive/stable.tar.gz";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
 		xremap-flake.url = "github:xremap/nix-flake";
 
 		

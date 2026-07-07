@@ -14,7 +14,7 @@
 		gh
 		gnumake
 		hello
-		inputs.dmm.packages.x86_64-linux.default
+		#inputs.dmm.packages.x86_64-linux.default
 		imagemagick
 		kondo
 		lazygit
