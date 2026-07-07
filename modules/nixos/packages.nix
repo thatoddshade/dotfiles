@@ -37,7 +37,7 @@
 		wget
 		wiki-tui
 		yt-dlp
-		zola
+		zola	# Markdown and TOML frontmatter SSG written in Rust
 		zellij
 		zoxide
 
