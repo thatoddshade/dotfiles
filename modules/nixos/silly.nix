@@ -3,6 +3,7 @@
 { inputs, pkgs, ... }:
 {
 	environment.systemPackages = with pkgs; [
+		cowsay
 		gti
 		hollywood
 		lavat
