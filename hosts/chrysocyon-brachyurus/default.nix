@@ -25,6 +25,14 @@
 		outputs.nixosModules.timeAndLanguage
 	];
 
+
+	# Add an overlay for unstable packages and allow unfree packages.
+	nixpkgs.overlays = [
+		outputs.overlays.unstable-packages
+		inputs.nix-minecraft.overlay
+	];
+	nixpkgs.config.allowUnfree = true;
+
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 	environment.sessionVariables = rec {
@@ -69,12 +77,7 @@
 		packages = with pkgs; [
 			kdePackages.kate
 		];
-	};
-
-	# Add an overlay for unstable packages and allow unfree packages.
-	nixpkgs.overlays = [ outputs.overlays.unstable-packages ];
-	nixpkgs.config.allowUnfree = true;
-	
+	};	
 
 	## List packages installed in system profile. To search, run:
 	## $ nix search wget

@@ -1,30 +1,23 @@
 {
-	description = "thatoddshade's NIXOS, HOME MANAGER and NIX-ON-DROID flake configuration";
+	description = "NixOS, Home Manager and Nix-on-Droid configuration flake";
 
 	inputs = {
 		nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-26.05";
 		nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
 
-		home-manager = {
-			url = "github:nix-community/home-manager/release-26.05";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
+		home-manager.url = "github:nix-community/home-manager/release-26.05";
+		home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
 		nixos-cli.url = "github:nix-community/nixos-cli";
 		nixos-wsl.url = "github:nix-community/NixOS-WSL";
-
 		stylix.url = "github:danth/stylix";
-
 		#systems.url = "github:nix-systems/default";
-
 		xremap-flake.url = "github:xremap/nix-flake";
 
 		
-		nix-on-droid = {
-			url = "github:nix-community/nix-on-droid/release-24.05";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
+		nix-on-droid.url = "github:nix-community/nix-on-droid/release-24.05";
+		nix-on-droid.inputs.nixpkgs.follows = "nixpkgs";
 	};
 
 	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nixos-cli, nixos-wsl, stylix, nix-on-droid, ... }@inputs: 
