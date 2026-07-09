@@ -32,7 +32,6 @@
 		wget
 		wiki-tui
 		yt-dlp
-		zellij
 		zoxide
 
 		
