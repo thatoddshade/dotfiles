@@ -1,11 +1,16 @@
-# configuration for any personal computers
+# Programs' configuration.
 {lib, ...}:
 {
-	programs = lib.genAttrs [
-		"htop"
-		"lazygit"
-		"mtr"
-		"nh"
-		"nix-ld"
-	] (program: { enable = true; });
+	programs.htop.enable = true;
+	programs.lazygit.enable = true;
+	programs.mtr.enable = true;
+	programs.nh.enable = true;
+	programs.nix-ld.enable = true;
+	programs.fzf = { fuzzyCompletion = true; keybindings = true; }
+	programs.neovim = {
+		enable = true;
+		defaultEditor = true;
+		viAlias = true;
+		vimAlias = true;
+	};
 }
