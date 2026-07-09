@@ -1,6 +1,7 @@
 {...}:
 {
 	time.timeZone = "Europe/Paris";
+
 	i18n.defaultLocale = "fr_FR.UTF-8";
 	i18n.extraLocaleSettings = {
 		LC_ADDRESS = "fr_FR.UTF-8";
@@ -14,6 +15,8 @@
 		LC_TIME = "fr_FR.UTF-8";
 	};
 
-	# set the keyboard layout to EurKEY
-	services.xserver.xkb.layout = "eu";
+	services.xserver.xkb = {
+		layout = "eu,fr";
+		variant = ",";
+	};
 }
