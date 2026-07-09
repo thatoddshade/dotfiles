@@ -44,10 +44,10 @@
 		wallpaperDirectory = ./wallpapers;
 	in
 	{
-		# custom packages accessible through `nix build`, `nix shell` and other nix subcommands
+		# Custom packages accessible through `nix build`, `nix shell` and other nix subcommands
 		packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
 
-		# formatter for nix files available through `nix fmt`
+		# Formatter for nix files available through `nix fmt`
 		formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
 
 		overlays = import ./overlays {inherit inputs;};
