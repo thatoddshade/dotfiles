@@ -16,6 +16,7 @@
 
 		#outputs.nixosModules.autoUpgrade
 		outputs.nixosModules.audio
+		outputs.nixosModules.bash
 		outputs.nixosModules.git
 		outputs.nixosModules.packages
 		outputs.nixosModules.packagesGraphical
