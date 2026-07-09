@@ -14,6 +14,7 @@
 {
 	imports = [ # Include the results of the hardware scan.
 		./hardware-configuration.nix
+		./minecraft-server.nix
 
 		outputs.nixosModules.autoUpgrade
 		outputs.nixosModules.audio
