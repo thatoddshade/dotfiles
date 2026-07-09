@@ -58,7 +58,7 @@
 
 		nixosModules = import ./modules/nixos;
 		nixosConfigurations = import ./hosts {
-			inherit nixpkgs inputs outputs stdenv nixos-cli nixos-wsl stylix;
+			inherit nixpkgs inputs outputs nixos-cli nixos-wsl stylix;
 		};
 
 

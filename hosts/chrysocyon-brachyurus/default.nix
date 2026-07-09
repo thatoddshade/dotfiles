@@ -7,16 +7,14 @@
 	outputs,
 	config,
 	pkgs,
-	stdenv,
 	...
 }:
-
 {
 	imports = [ # Include the results of the hardware scan.
 		./hardware-configuration.nix
 		./minecraft-server.nix
 
-		outputs.nixosModules.autoUpgrade
+		#outputs.nixosModules.autoUpgrade
 		outputs.nixosModules.audio
 		outputs.nixosModules.git
 		outputs.nixosModules.packages
@@ -26,7 +24,7 @@
 		outputs.nixosModules.timeAndLanguage
 	];
 
-	nix.settings.experimental-features = ["nix-command" "flakes" ];
+	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 	environment.sessionVariables = rec {
 		FLAKE = "/home/gl/dotfiles";
@@ -116,6 +114,5 @@
 	# this value at the release version of the first install of this system.
 	# Before changing this value read the documentation for this option
 	# (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-	stdenv.hostPlatform.system.stateVersion = "24.05"; # Did you read the comment?
-
+	system.stateVersion = "24.05"; # Did you read the comment?
 }
