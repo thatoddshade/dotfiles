@@ -105,7 +105,6 @@
 			mako	# Lightweight Wayland notification daemon
 			morewaita-icon-theme
 			mpv
-			nvd
 			#ristate
 			sandbar
 			swaybg

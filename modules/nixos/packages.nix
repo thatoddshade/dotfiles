@@ -28,6 +28,7 @@
 		lazygit
 		mprocs
 		#newsboat
+		nvd	# Diff tool for Nix profiles
 		pandoc
 		python3
 		plan9port
