@@ -6,7 +6,7 @@
 	programs.mtr.enable = true;
 	programs.nh.enable = true;
 	programs.nix-ld.enable = true;
-	programs.fzf = { fuzzyCompletion = true; keybindings = true; }
+	programs.fzf = { fuzzyCompletion = true; keybindings = true; };
 	programs.neovim = {
 		enable = true;
 		defaultEditor = true;

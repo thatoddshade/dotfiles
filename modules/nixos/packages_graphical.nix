@@ -9,7 +9,7 @@
 	programs.thunderbird = {
 		enable = true;
 		package = pkgs.unstable.thunderbird-bin;
-	}
+	};
 
 	environment.systemPackages = with pkgs; [
 		alacritty
