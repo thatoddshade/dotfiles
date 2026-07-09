@@ -3,7 +3,7 @@
 	programs.firefox = {
 		enable = true;
 		package = pkgs.unstable.firefox-bin;
-		languagePacks = [ "fr" "en-GB" "en-US" "en" ];
+		languagePacks = [ "fr" "en-GB" "en-US" ];
 	};
 
 	programs.thunderbird = {
@@ -16,13 +16,12 @@
 		audacity
 		blockbench
 		cpu-x
-		blockbench
 		#eww
 		genact
 		gimp
 		#godot_4
 		kdePackages.kdenlive
-		transmission
+		pkgs.unstable.transmission_4
 		
 	];
 }
