@@ -67,20 +67,13 @@
 		extraGroups = [ "networkmanager" "wheel" ];
 		packages = with pkgs; [
 			kdePackages.kate
-		#	thunderbird
 		];
 	};
 
-	# Add unstable overlay and allow unfree packages
-	nixpkgs = {
-		overlays = [
-			outputs.overlays.unstable-packages
-		];
+	# Add an overlay for unstable packages and allow unfree packages.
+	nixpkgs.overlays = [ outputs.overlays.unstable-packages ];
+	nixpkgs.config.allowUnfree = true;
 	
-		config = {
-			allowUnfree = true;
-		};
-	};
 
 	## List packages installed in system profile. To search, run:
 	## $ nix search wget
