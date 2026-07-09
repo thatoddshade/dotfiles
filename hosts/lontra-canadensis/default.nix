@@ -101,8 +101,8 @@
 			#gimp
 			#godot_4
 			#haskellPackages.game-of-life
-			imv
-			mako
+			imv	# Command-line image viewer for tiling window managers
+			mako	# Lightweight Wayland notification daemon
 			morewaita-icon-theme
 			mpv
 			nvd
@@ -112,7 +112,7 @@
 			swayimg
 			transmission
 			wezterm
-			wl-clipboard
+			wl-clipboard	# Command-line copy and paste utilities for Wayland
 			wlr-randr
 		];
 		sessionVariables = rec {
