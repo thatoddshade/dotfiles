@@ -11,7 +11,7 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		nixos-cli.url = "github:water-sucks/nixos";
+		nixos-cli.url = "github:nix-community/nixos-cli";
 		nixos-wsl.url = "github:nix-community/NixOS-WSL";
 
 		stylix.url = "github:danth/stylix";
