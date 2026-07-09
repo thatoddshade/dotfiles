@@ -322,14 +322,14 @@
       "locked": {
         "lastModified": 1780811447,
         "narHash": "sha256-H2UAcXvmdpgZi4trdX1hoJIteXdoqod5Vbs9oB+O4VY=",
-        "owner": "water-sucks",
-        "repo": "nixos",
+        "owner": "nix-community",
+        "repo": "nixos-cli",
         "rev": "fef2683f62b984a4c7b19eaf258f5dc387ec3447",
         "type": "github"
       },
       "original": {
-        "owner": "water-sucks",
-        "repo": "nixos",
+        "owner": "nix-community",
+        "repo": "nixos-cli",
         "type": "github"
       }
     },
