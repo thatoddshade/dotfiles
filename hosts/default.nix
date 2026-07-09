@@ -1,5 +1,6 @@
 {nixpkgs, inputs, outputs, nixos-cli, nixos-wsl, stylix, ...}:
 nixpkgs.lib.genAttrs [
+		"chrysocyon-brachyurus"
 		"lontra-canadensis"
 		"lontra-canadensis-wsl"
 	] (host:
