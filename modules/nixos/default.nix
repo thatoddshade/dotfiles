@@ -3,6 +3,7 @@
 {
 	# module files
 	audio = import ./audio.nix;
+	autoUpgrade = import ./autoupgrade.nix;
 	bash = import ./bash.nix;
 	git = import ./git.nix;
 	packages = import ./packages.nix;
