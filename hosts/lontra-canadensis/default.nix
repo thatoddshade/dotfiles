@@ -11,9 +11,9 @@
 		inputs.xremap-flake.nixosModules.default
 		outputs.nixosModules.audio
 		outputs.nixosModules.bash
-		outputs.nixosModules.browser
 		outputs.nixosModules.git
 		outputs.nixosModules.packages
+		outputs.nixosModules.packagesGraphical
 		outputs.nixosModules.programs
 		outputs.nixosModules.style
 		outputs.nixosModules.timeAndLanguage

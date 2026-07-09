@@ -4,9 +4,9 @@
 	# module files
 	audio = import ./audio.nix;
 	bash = import ./bash.nix;
-	browser = import ./browser.nix;
 	git = import ./git.nix;
 	packages = import ./packages.nix;
+	packagesGraphical = import ./packages_graphical.nix;
 	programs = import ./programs.nix;
 	style = import ../style.nix;
 	silly = import ./silly.nix;
