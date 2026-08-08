@@ -23,6 +23,7 @@
 		outputs.nixosModules.programs
 		outputs.nixosModules.silly
 		outputs.nixosModules.timeAndLanguage
+		outputs.nixosModules.windowManager
 	];
 
 
