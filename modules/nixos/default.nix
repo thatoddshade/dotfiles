@@ -13,4 +13,5 @@
 	silly = import ./silly.nix;
 	ssh = import ./ssh.nix;
 	timeAndLanguage = import ./time_and_language.nix;
+	windowManager = import ./window_manager.nix;
 }

@@ -14,6 +14,7 @@
 		stylix.url = "github:danth/stylix";
 		#systems.url = "github:nix-systems/default";
 		xremap-flake.url = "github:xremap/nix-flake";
+		noctalia.url = "github:noctalia-dev/noctalia/cachix";	
 
 		
 		nix-on-droid.url = "github:nix-community/nix-on-droid/release-24.05";
