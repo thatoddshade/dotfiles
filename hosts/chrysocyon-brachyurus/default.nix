@@ -60,10 +60,6 @@
 	# You can disable this if you're only using the Wayland session.
 	services.xserver.enable = true;
 
-	# Enable the KDE Plasma Desktop Environment.
-	services.displayManager.sddm.enable = true;
-	services.desktopManager.plasma6.enable = true;
-
 	# Enable CUPS to print documents.
 	services.printing.enable = true;
 
@@ -75,9 +71,6 @@
 		isNormalUser = true;
 		description = "G. L.";
 		extraGroups = [ "networkmanager" "wheel" ];
-		packages = with pkgs; [
-			kdePackages.kate
-		];
 	};	
 
 	## List packages installed in system profile. To search, run:
