@@ -30,7 +30,7 @@
 	# Add an overlay for unstable packages and allow unfree packages.
 	nixpkgs.overlays = [
 		outputs.overlays.unstable-packages
-		inputs.nix-minecraft.overlay
+		#inputs.nix-minecraft.overlay
 	];
 	nixpkgs.config.allowUnfree = true;
 
