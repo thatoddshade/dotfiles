@@ -24,5 +24,9 @@
 		gimp
 		kdePackages.kdenlive
 		
+		
+		# Media
+		imv
+		mpv
 	];
 }
