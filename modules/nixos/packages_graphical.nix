@@ -13,15 +13,16 @@
 
 	environment.systemPackages = with pkgs; [
 		alacritty
+		cpu-x
+		genact
+		pkgs.unstable.transmission_4
+		#godot_4
+
+		# Creativity
 		audacity
 		blockbench
-		cpu-x
-		#eww
-		genact
 		gimp
-		#godot_4
 		kdePackages.kdenlive
-		pkgs.unstable.transmission_4
 		
 	];
 }
